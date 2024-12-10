@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General Styles */
+
+body {
+    background-color: #1a1a3b;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 390px;
+    background-color: #262654;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.navbar,
+.sections {
+    margin-bottom: 15px;
+}
+
+
+/* Header Styles */
+
+header {
+    background-color: #1e1e50;
+}
+
+.logo {
+    width: 100px;
+}
+
+.profile-icon {
+    border-radius: 50%;
+}
+
+
+/* Tabs */
+
+.tabs-container {
+    background-color: #292966;
+}
+
+.tab {
+    color: #fff;
+    border: none;
+    background: transparent;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+}
+
+.tab.active {
+    color: #8c4fff;
+    border-bottom: 2px solid #8c4fff;
+}
+
+
+/* Description */
+
+.description {
+    font-size: 0.9rem;
+    padding: 0 15px;
+}
+
+
+/* Movie Posters */
+
+.movie-poster {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+}

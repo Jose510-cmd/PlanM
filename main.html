@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=390, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CineScape</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        /* Modal Styles */
+        
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: #2c2c54;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .modal-content h5,
+        .modal-content p {
+            margin: 10px 0;
+        }
+        
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid main-container">
+        <!-- Header -->
+        <header class="d-flex justify-content-between align-items-center p-3">
+            <button class="btn btn-menu">
+                <img src="medios/menu.png" alt="Menu" width="24">
+            </button>
+            <img src="medios/Logo.png" alt="Logo CineScape" class="logo">
+            <img src="medios/user.png" alt="Perfil" class="profile-icon" width="32">
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs-container text-center py-2">
+            <button class="btn tab active">Aventuras</button>
+            <button class="btn tab">Animadas</button>
+            <button class="btn tab">Drama</button>
+        </div>
+
+        <!-- Description -->
+        <p class="text-white text-center description">
+            Descubre emocionantes películas de aventura llenas de acción, peligro y exóticos lugares en CINESCAPE.
+        </p>
+
+        <!-- Estrenos Section -->
+        <section class="mt-4">
+            <h4 class="text-white">Estrenos:</h4>
+            <div class="d-flex gap-2 overflow-auto">
+                <img src="medios/guardianes3.jpg" class="movie-poster" alt="Guardianes de la Galaxia" data-title="Guardianes de la Galaxia" data-description="Un emocionante viaje con los Guardianes." data-poster="medios/guardianes3.jpg">
+                <img src="medios/mariobros.jpg" class="movie-poster" alt="Super Mario Bros" data-title="Super Mario Bros" data-description="Estreno: 06-Abr-2023 Género: Acción, Comedia
+                 De Nintendo e Illumination llega una nueva película animada basada en el mundo de Super Mario Bros. Dirigida por Aaron Horvath y Michael Jelenic (colaboradores en Los Jóvenes Titanes en acción) y con un guion de Matthew Fogel (La gran aventura LEGO 2, Minions: Nace un villano)."
+                    data-poster="medios/mariobros.jpg">
+                <img src="medios/fabelman_drama.jpg" class="movie-poster" alt="Fabelman" data-title="Fabelman" data-description="Un drama conmovedor." data-poster="medios/fabelman_drama.jpg">
+            </div>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-white">Proximamente:</h4>
+            <div class="d-flex gap-2 overflow-auto">
+                <img src="medios/flash.jpg" class="movie-poster" alt="Flash" data-title="Flash" data-description="Un emocionante viaje con los Guardianes." data-poster="medios/flash.jpg">
+                <img src="medios/megalodon.jpg" class="movie-poster" alt="Megalodon 2" data-title="Megalodon 2" data-description="Una aventura llena de colores y acción." data-poster="medios/megalodon.jpg">
+                <img src="medios/barbie.jpeg" class="movie-poster" alt="Barbie" data-title="Barbie" data-description="Un drama conmovedor." data-poster="medios/barbie.jpeg">
+            </div>
+        </section>
+        <!-- Modal -->
+        <div class="modal-overlay" id="movie-modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-modal">&times;</span>
+                <img id="modal-poster" src="" alt="Poster">
+                <h5 id="modal-title"></h5>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal JavaScript
+        document.addEventListener("DOMContentLoaded", () => {
+            const posters = document.querySelectorAll(".movie-poster");
+            const modal = document.getElementById("movie-modal");
+            const closeModal = document.getElementById("close-modal");
+            const modalPoster = document.getElementById("modal-poster");
+            const modalTitle = document.getElementById("modal-title");
+            const modalDescription = document.getElementById("modal-description");
+
+            posters.forEach(poster => {
+                poster.addEventListener("click", () => {
+                    modal.style.display = "flex";
+                    modalPoster.src = poster.dataset.poster;
+                    modalTitle.textContent = poster.dataset.title;
+                    modalDescription.textContent = poster.dataset.description;
+                });
+            });
+
+            closeModal.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

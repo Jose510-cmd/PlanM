@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineScape</title>
+    <link rel="stylesheet" href="CSS/stylelogin.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <img src="medios/Logo.png" alt="CineColombia Logo" class="logo">
+        <div class="form-container">
+            <h2 id="form-title">Iniciar Sesión</h2>
+            <p class="mb-4">Bienvenido al maravilloso mundo del cine en CINESCAPE.</p>
+            <form id="login-form">
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <form id="register-form" style="display: none;" class="form-container">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Nombres" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Apellidos" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="mb-3">
+                    <input type="tel" class="form-control" placeholder="Teléfono" required>
+                </div>
+                <button type="submit" class="btn btn-registrarme">REGISTRARME</button>
+            </form>
+
+
+            <p id="toggle-form">
+                ¿Ya tienes cuenta? <a href="#" id="toggle-link">Regístrate aquí</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
